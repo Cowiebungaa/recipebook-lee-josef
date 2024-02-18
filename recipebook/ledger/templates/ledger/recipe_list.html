@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Recipe Book</title>
+    </head>
+    <body>
+        <h1>Recipe Book</h1>
+        <ul>
+            {% for recipe in recipes %}
+                <li>
+                    <h2> {{ recipe.name }} </h2>
+                    <ul>
+                        {% for ingredient in recipe.ingredients%}
+                            <li>Name: {{ ingredient.name }} : Qty: {{ ingredient.quantity }}</li>
+                        {% endfor %}
+                    </ul>
+                    <br><a href="{{ recipe.link }}">View Recipe</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
