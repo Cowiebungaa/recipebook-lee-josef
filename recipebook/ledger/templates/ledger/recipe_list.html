@@ -7,13 +7,8 @@
         <ul>
             {% for recipe in recipes %}
                 <li>
-                    <h2> {{ recipe.name }} </h2>
-                    <ul>
-                        {% for ingredient in recipe.ingredients%}
-                            <li>Name: {{ ingredient.name }} : Qty: {{ ingredient.quantity }}</li>
-                        {% endfor %}
-                    </ul>
-                    <br><a href="{{ recipe.link }}">View Recipe</a>
+                    <h2><a href="{{ recipe.get_absolute_url }}">{{recipe.name}} </a></h2>
+                    
                 </li>
             {% endfor %}
         </ul>
